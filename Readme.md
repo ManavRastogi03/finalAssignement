@@ -42,7 +42,19 @@ Assignments/
     │   ├── pages/          # Dashboard & Leads pages
     │   └── App.jsx
 ```
+## Screenshots
 
+### Dashboard
+![Dashboard](screensort/2.png)
+
+### Leads List
+![Leads List](screensort/3.png)
+
+### Create Lead
+![Create Lead](screensort/4.png)
+
+### Update Status
+![Update Status](screensort/5.png)
 ---
 
 ## Getting Started
