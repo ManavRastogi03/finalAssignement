@@ -1,5 +1,3 @@
-
-```markdown
 # FitLeads - Lead Management System
 
 A full-stack Lead Management Module built for a fitness company.
@@ -9,11 +7,13 @@ Built with Node.js, Express, PostgreSQL, and React.js.
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express.js
-- **Database:** PostgreSQL
-- **Frontend:** React.js, Tailwind CSS, Vite
-- **Validation:** Joi
-- **Others:** Axios, React Hot Toast, React Router DOM
+| Layer | Technology |
+|-------|-----------|
+| **Backend** | Node.js, Express.js |
+| **Database** | PostgreSQL |
+| **Frontend** | React.js, Tailwind CSS, Vite |
+| **Validation** | Joi |
+| **Others** | Axios, React Hot Toast, React Router DOM |
 
 ---
 
@@ -42,6 +42,9 @@ Assignments/
     │   ├── pages/          # Dashboard & Leads pages
     │   └── App.jsx
 ```
+
+---
+
 ## Screenshots
 
 ### Dashboard
@@ -55,6 +58,7 @@ Assignments/
 
 ### Update Status
 ![Update Status](./screensort/5.png)
+
 ---
 
 ## Getting Started
@@ -148,25 +152,25 @@ Frontend runs on: `http://localhost:5173`
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | /health | Health check |
-| POST | /api/leads | Create a new lead |
-| GET | /api/leads | List leads (search, filter, sort, paginate) |
-| PUT | /api/leads/:id/status | Update lead status |
-| GET | /api/dashboard | Dashboard metrics |
+| `GET` | `/health` | Health check |
+| `POST` | `/api/leads` | Create a new lead |
+| `GET` | `/api/leads` | List leads (search, filter, sort, paginate) |
+| `PUT` | `/api/leads/:id/status` | Update lead status |
+| `GET` | `/api/dashboard` | Dashboard metrics |
 
 ---
 
-### Query Parameters for GET /api/leads
+### Query Parameters for `GET /api/leads`
 
 | Param | Type | Description | Default |
 |-------|------|-------------|---------|
-| page | number | Page number | 1 |
-| limit | number | Records per page | 10 |
-| search | string | Search by name or phone | - |
-| status | string | Filter by status | - |
-| source | string | Filter by source | - |
-| sort_by | string | created_at, full_name, status | created_at |
-| order | string | asc or desc | desc |
+| `page` | number | Page number | `1` |
+| `limit` | number | Records per page | `10` |
+| `search` | string | Search by name or phone | — |
+| `status` | string | Filter by status | — |
+| `source` | string | Filter by source | — |
+| `sort_by` | string | `created_at`, `full_name`, `status` | `created_at` |
+| `order` | string | `asc` or `desc` | `desc` |
 
 ---
 
@@ -180,9 +184,9 @@ new → contacted → visit_scheduled → closed / lost
 
 ### Allowed Values
 
-**Status:** `new`, `contacted`, `visit_scheduled`, `closed`, `lost`
+**Status:** `new` | `contacted` | `visit_scheduled` | `closed` | `lost`
 
-**Source:** `website`, `referral`, `walk_in`, `social_media`, `other`
+**Source:** `website` | `referral` | `walk_in` | `social_media` | `other`
 
 ---
 
@@ -194,12 +198,12 @@ The system is designed to handle **10 lakh+ records** efficiently.
 
 | Index | Column | Purpose |
 |-------|--------|---------|
-| idx_lead_full_name | full_name | Speeds up ILIKE name search |
-| idx_lead_phone | phone | Fast unique phone lookup |
-| idx_lead_status | status | Fast status filtering |
-| idx_lead_source | source | Fast source filtering |
-| idx_lead_created_at | created_at | Fast date range queries for dashboard |
-| idx_lead_status_source | status + source | Composite index for combined filters |
+| `idx_lead_full_name` | `full_name` | Speeds up ILIKE name search |
+| `idx_lead_phone` | `phone` | Fast unique phone lookup |
+| `idx_lead_status` | `status` | Fast status filtering |
+| `idx_lead_source` | `source` | Fast source filtering |
+| `idx_lead_created_at` | `created_at` | Fast date range queries for dashboard |
+| `idx_lead_status_source` | `status + source` | Composite index for combined filters |
 
 ### Other Optimizations
 
@@ -207,8 +211,8 @@ The system is designed to handle **10 lakh+ records** efficiently.
 - **Parameterized Queries** — `$1, $2` prevents SQL injection and allows query plan caching by PostgreSQL
 - **Pagination** — `LIMIT` + `OFFSET` ensures we never load all records into memory
 - **Promise.all()** — Dashboard runs all 4 queries in parallel instead of sequentially
-- **ILIKE with %search%** — Case-insensitive search without full table scan when index is used
-- **stripUnknown: true** — Joi strips unknown fields before they reach the DB
+- **ILIKE with `%search%`** — Case-insensitive search without full table scan when index is used
+- **`stripUnknown: true`** — Joi strips unknown fields before they reach the DB
 
 ---
 
@@ -241,16 +245,15 @@ PUT /api/leads/1/status
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| PORT | Server port | 5000 |
-| DB_HOST | PostgreSQL host | localhost |
-| DB_PORT | PostgreSQL port | 5432 |
-| DB_USER | PostgreSQL username | postgres |
-| DB_PASSWORD | PostgreSQL password | secret |
-| DB_NAME | Database name | lead_management |
+| `PORT` | Server port | `5000` |
+| `DB_HOST` | PostgreSQL host | `localhost` |
+| `DB_PORT` | PostgreSQL port | `5432` |
+| `DB_USER` | PostgreSQL username | `postgres` |
+| `DB_PASSWORD` | PostgreSQL password | `secret` |
+| `DB_NAME` | Database name | `lead_management` |
 
 ---
 
 ## Author
 
-Manav Rastogi — [GitHub](https://github.com/ManavRastogi03)
-```
+**Manav Rastogi** — [GitHub](https://github.com/ManavRastogi03)
